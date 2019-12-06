@@ -51,7 +51,7 @@ constructor(props){
                             </View>
 
                        </View>
-                
+                 
                 </View>
             </SafeAreaView>
         )
