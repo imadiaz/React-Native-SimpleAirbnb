@@ -1,7 +1,6 @@
 import React ,{Component} from 'react';
 import {SafeAreaView,View,Text,Button,ScrollView,TextInput} from 'react-native';
-import LoginScreen from './src/screens/LoginScreen';
-
+import AppNavigation from './src/navigation/AppNavigation';
 class App extends Component{
 // constructor(props){
 //   super(props);
@@ -22,7 +21,7 @@ class App extends Component{
 
   render(){
     return (
-          <LoginScreen />
+          <AppNavigation />
     )
   }
 
