@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {SafeAreaView,View,Text,Button,ScrollView,TextInput,Image,TouchableHighlight} from 'react-native';
+import {SafeAreaView,View,Text,Button,ScrollView,TextInput,Image,TouchableHighlight,AsyncStorage} from 'react-native';
 
 export default class LoginScreen extends Component {
 constructor(props){
@@ -9,6 +9,21 @@ constructor(props){
         password:''
     }
 }
+
+// checkAsync = async() =>{
+
+//     const userData = {
+//         "username":this.state.user,
+//         "password":this.state.password
+//     }
+//     console.log(userData);
+//     await AsyncStorage.setItem("@userData",JSON.stringify(userData));
+// }
+// async showUser(){
+//     console.log("al show user")
+//     const userData = await AsyncStorage.getItem("@userData");
+//     console.log(JSON.parse(userData));
+// }
 
 
     render() {
@@ -39,15 +54,17 @@ constructor(props){
                             />
 
                             <TouchableHighlight style={{width:'100%',
-                            height:40,backgroundColor:'#fff',color:'#024A59',
+                            height:40,backgroundColor:'#024A59',borderWidth:1,borderColor:'#fff',
                             marginTop:20,borderRadius:20,justifyContent:'center',
-                            alignContent:'center',alignItems:'center'}} underlayColor={'#fff'} onPress={() => alert('onPress')}>
-                                <Text>Login</Text>
+                            alignContent:'center',alignItems:'center'}} underlayColor={'#fff'} onPress={this.checkAsync}>
+                                <Text style={{color:'#fff'}}>Login</Text>
                             </TouchableHighlight>
 
                             <View>
                                 <Text style={{fontSize:18,color:'#fff',marginTop:15}}>More options</Text>
-                                <Text  style={{fontSize:18,color:'#fff',marginTop:5}}>By utez curso c r 2019</Text>
+                                <Text  style={{fontSize:18,color:'#fff',marginTop:20,fontSize:10}}>If you're sure that you
+                                want to use this app you need to accept the conditions about this react application app
+                                all the development is by Immanuel Salazar Diaz</Text>
                             </View>
 
                        </View>
