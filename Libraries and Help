@@ -46,3 +46,34 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
 ------------------------------ links ---------------------------------
 https://www.pngkey.com/png/full/60-606047_airbnb-logo-white-png-airbnb-logo-png-white.png
+
+
+
+
+
+---------------------------- Code -------------------------------------------------
+
+addFavorite = (id) => {
+
+        const listApartments = this.state.dataItems;
+        listApartments.forEach(element => {
+            if (element.id == id) {
+                element.isFavorite = !element.isFavorite;
+            }
+        });
+        this.setNewList(listApartments);
+        this.setState({ dataItems: listApartments });
+
+    }
+
+    setNewList = async (list) => {
+        await AsyncStorage.setItem("@dataApartments", JSON.stringify(list));
+    }
+    
+    
+    
+    ------------------------------------- View Code -------------------------------------------
+    
+    <TouchableOpacity onPress={() => this.addFavorite(item.id)}>
+                                                    <Icon name='ios-heart' color={item.isFavorite ? 'red' : '#c3c3c3'} style={{ marginTop: 5, marginRight: 5 }} size={20} />
+    </TouchableOpacity>
