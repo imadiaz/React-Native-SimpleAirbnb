@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import {createStackNavigator, HeaderTitle, HeaderBackButton} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -8,11 +8,12 @@ import SplashScreen from '../screens/SplashScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import CurrentRentScreen from '../screens/CurrentRentScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
+import RentDetailScreen from '../screens/RentDetailScreen';
 
 const HomeBottomStack = createBottomTabNavigator({
     HomeScreen:{
         screen:HomeScreen,
-        navigationOptions:{
+        navigationOptions:{  
             tabBarIcon: ({tintColor }) => (
                 <Icon name="ios-home" size={27} color={tintColor}/>
              )
@@ -47,14 +48,17 @@ const HomeBottomStack = createBottomTabNavigator({
            shadowOpacity:1.0 
         }
     },
-    
+    navigationOptions:{
+        header:null,
+    }
+     
 });
 
 
 const HomeStack = createStackNavigator({
 
     HomeBottomStack:{
-        screen:HomeBottomStack
+        screen:HomeBottomStack,
     },
     LoginScreen:{
         screen:LoginScreen,
@@ -66,6 +70,18 @@ const HomeStack = createStackNavigator({
         screen:SplashScreen,
         navigationOptions:{
             header:null,
+            
+        }
+    },
+    RentDetailScreen:{
+        screen:RentDetailScreen,
+        navigationOptions:{
+            headerTintColor:'#fff',
+            headerTransparent:true,
+            headerLeftContainerStyle:{
+                backgroundColor:'#024A59',
+                borderRadius:23,
+            }
         }
     }
 

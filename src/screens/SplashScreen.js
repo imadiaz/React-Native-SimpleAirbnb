@@ -20,7 +20,9 @@ class SplashScreen extends Component {
       if(!userData){
             this.props.navigation.navigate('LoginScreen');
       }else{
-          this.props.navigation.navigate('HomeScreen');
+          this.props.navigation.navigate('HomeScreen',{
+              user:JSON.parse(userData),
+          });
       }
     }      
 
