@@ -80,7 +80,9 @@ const HomeStack = createStackNavigator({
             headerTransparent:true,
             headerLeftContainerStyle:{
                 backgroundColor:'#024A59',
-                borderRadius:23,
+                borderRadius:30,
+                height:40,
+                marginTop:5            
             }
         }
     }
