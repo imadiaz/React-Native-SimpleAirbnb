@@ -77,3 +77,11 @@ addFavorite = (id) => {
     <TouchableOpacity onPress={() => this.addFavorite(item.id)}>
                                                     <Icon name='ios-heart' color={item.isFavorite ? 'red' : '#c3c3c3'} style={{ marginTop: 5, marginRight: 5 }} size={20} />
     </TouchableOpacity>
+    
+    
+    
+    ---------------------------------- Text ----------------------------------------------------
+    Olvídate de los senderos para turistas y adéntrate en las aventuras más fuera de lo común en todo el mundo.
+    No importa si exploras rutas gastronómicas o de senderismo, si eres amante de los animales o aficionado a la arqueología: hay una aventura para explorar tu pasión.
+    Reserva una aventura y consigue un descuento de 200 USD en un kit de aventura negro GoPro HERO7 Black.
+    Estos viajes en grupos pequeños van de 2 a 10 días y comienzan a partir de 99 USD, con alojamiento, alimentos y actividades incluidos. 
