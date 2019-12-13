@@ -4,7 +4,7 @@ import {
     View, Text,
     Image, ScrollView,
     FlatList, ImageBackground,
-    TouchableOpacity, AsyncStorage, Button
+    TouchableOpacity, AsyncStorage, Button,Alert
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -34,6 +34,30 @@ class RentDetailScreen extends Component {
     }
 
 
+  confirmRent = () => {
+        const currentItem = this.state.item;
+        currentItem.startDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
+        currentItem.endDate = `${endDate.getDate() + this.state.days}/${endDate.getMonth() + 1}/${endDate.getFullYear()}`;
+        currentItem.days = this.state.days;
+        currentItem.total = currentItem.cost * this.state.days;
+
+        Alert.alert(
+            'Renta de Airbnb',
+            'Desea confirmar su renta?',
+            [
+                {text:'Aceptar',onPress:() => this.saveRent(currentItem)},
+                {text:'Cancelar'},  
+            ]);
+    }
+
+    saveRent = async(object) => {
+        console.log(object);
+        await AsyncStorage.setItem('@progressRent',JSON.stringify(object));
+        this.props.navigation.navigate('CurrentRentScreen',{
+            item:object,
+            isRentDetail:false
+        });
+    }
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
@@ -99,7 +123,7 @@ class RentDetailScreen extends Component {
                                     justifyContent: 'center', alignItems: 'center',
                                     alignContent: 'center',
                                 }}
-                                    onPress={() => alert('')}
+                                    onPress={() => this.confirmRent()}
                                 >
                                     <Text style={{ color: '#fff', marginTop: 10 }}>Rentar</Text>
                                 </TouchableOpacity>

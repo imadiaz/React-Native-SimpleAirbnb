@@ -11,6 +11,8 @@ class HomeScreen extends Component {
             dataItems: null,
             userData: this.props.navigation.getParam("user", { username: 'Anonimo' }),
         }
+
+        global.user=this.state.userData;
     }
 
     componentDidMount() {
@@ -64,9 +66,11 @@ class HomeScreen extends Component {
                                     image={`https://a0.muscache.com/im/pictures/68229b69-7194-4045-bd44-880c04025619.jpg?aki_policy=xx_large`}
                                     title={'Apartments'} />
 
+                                
                                 <CardComponent
                                     image={`https://a0.muscache.com/im/pictures/7af8e51c-9a03-4495-88a0-6b4c93a8ec38.jpg?aki_policy=xx_large`}
                                     title={'Rooms'} />
+                               
                             </ScrollView>
                         </View>
 
@@ -86,6 +90,8 @@ class HomeScreen extends Component {
                                     <TouchableOpacity 
                                     onPress={() => this.props.navigation.navigate('RentDetailScreen',{
                                             itemDetail:item,
+                                            
+
                                     })}>
                                         <View style={{
                                             backgroundColor: '#fff', height: 265, elevation: 7, shadowColor: '#000',

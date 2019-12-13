@@ -5,13 +5,17 @@ import {
     TouchableOpacity } 
     from 'react-native';
 
-
+import CustomListComponent from '../components/CustomListComponent';
  class ProfileScreen extends Component {
     render() {
         return (
             <SafeAreaView style={{flex:1}}>
                 <View style={{flex:1}}>
-                    <Text>Profile Screen</Text>
+                    <CustomListComponent
+                    username={'Immanuel'}
+                    password={'1234567'}
+                    isProfile={true}
+                    />
                 </View>
             </SafeAreaView>
         )
