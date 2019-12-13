@@ -85,3 +85,27 @@ addFavorite = (id) => {
     No importa si exploras rutas gastronómicas o de senderismo, si eres amante de los animales o aficionado a la arqueología: hay una aventura para explorar tu pasión.
     Reserva una aventura y consigue un descuento de 200 USD en un kit de aventura negro GoPro HERO7 Black.
     Estos viajes en grupos pequeños van de 2 a 10 días y comienzan a partir de 99 USD, con alojamiento, alimentos y actividades incluidos. 
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+Carpeta del APK generado:
+
+C:\Proyectos React\cursoreact\android\app\build\outputs\apk
+
+Codigo para generar el apk 
+cd android && ./gradlew assembleRelease
+
+
+---------------------------------------------------- LINKS ----------------------------------------
+
+https://react-native-elements.github.io/react-native-elements/
+
+https://akveo.github.io/react-native-ui-kitten/
+
+https://github.com/react-native-community/react-native-maps
+
